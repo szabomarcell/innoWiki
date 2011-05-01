@@ -1,0 +1,20 @@
+﻿/* this CSS applies to the editor, the editable region */
+.autolinker_selected  {
+	background: #CCF;
+}
+
+.autolinker_hover {
+	background: #CCF;
+}
+
+.highlighted0 {
+	background: yellow;
+}
+
+.highlighted1 {
+	background: yellow;
+}
+
+.highlighted2{
+	background: green;
+}

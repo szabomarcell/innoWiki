@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" href="design/innoWiki.css" type="text/css" />
+
+<script type="text/javascript" src="jscripts/tiny_mce/tiny_mce_src.js"></script>
+<script type="text/javascript" src="jscripts/jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jscripts/jquery/jquery.history.js"></script>
+<script type="text/javascript" src="jscripts/dateformat/date.format.js"></script>
+
+<script type="text/javascript" src="jscripts/webservice.js"></script>
+<script type="text/javascript" src="jscripts/sharepointconnection.js"></script>
+
+<script type="text/javascript" src="jscripts/innoWiki.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.widgets.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.events.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.classes.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.backend.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.frontend.changeTracker.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.frontend.loadSave.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.frontend.conflictHandler.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.navigation.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.layout.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.linker.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.linkinfo.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.alerter.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.highlighter.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.searchResultBox.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.TOC.js"></script>
+<script type="text/javascript" src="jscripts/innoWiki.ui.util.js"></script>
+
+<script type="text/javascript">
+
+function startIfLoaded(){
+	if( ! tinymce ){
+		setTimeout(startIfLoaded, 50);
+	} else {
+		innoWiki.startup.init();
+	}
+}
+
+function debug(text){
+	$("#debug").show();
+	$("#debug")[0].value = text;
+}
+function debugpp(text){
+	$("#debug").show();
+	$("#debug")[0].value += "\n" + text;
+}
+
+</script>
+
+
+</head>
+
+<body onload="startIfLoaded()" id="body">
+</body>
+
+</html>

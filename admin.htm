@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Admin</title>
+<script type="text/javascript" src="jscripts/webservice.js"></script>
+
+<script type="text/javascript">
+var siteUrl = location.href.replace(/^(.*)\/innoWiki\/admin\.htm.*$/,"$1");;
+
+function config(){
+	createList("innowiki","InnoWiki pages");
+	createList("innowiki-history","InnoWiki pages");
+	configList("innowiki");
+	configList("innowiki-history");
+}
+function createList(name,desc){
+	callWebService({
+		url: siteUrl + "/_vti_bin/lists.asmx",
+		soapaction: "http://schemas.microsoft.com/sharepoint/soap/AddList",
+		body: '<AddList xmlns="http://schemas.microsoft.com/sharepoint/soap/">'
+				+  '<listName>'+name+'</listName>'
+				+  '<description>'+desc+'</description>'
+				+  '<templateID>100</templateID>'
+				+	'</AddList>'
+	});
+}
+function configList(name){
+	callWebService({
+		url: siteUrl + "/_vti_bin/lists.asmx",
+		soapaction: "http://schemas.microsoft.com/sharepoint/soap/UpdateList",
+		body: '<UpdateList xmlns="http://schemas.microsoft.com/sharepoint/soap/">'
+				+ '<listName>'+name+'</listName>'
+				+ '<newFields><Fields>'
+				+ '<Method ID="1"><Field Type="Text" DisplayName="Summary"' 
+				+ ' Required="FALSE" MaxLength="255"' 
+				+ ' Description="Summary of the wikipage" />'
+				+ '</Method>'
+				+ '<Method ID="2"><Field Type="Note" DisplayName="Content"' 
+				+ ' Required="FALSE" NumLines="6" RichText="TRUE" RichTextMode="FullHtml" RowOrdinal="0"' 
+				+ ' Description="Content of the Wikipage" />'
+				+ '</Method>'
+				+ '</Fields></newFields>'
+				+ '</UpdateList>'
+		});
+}
+
+
+</script>
+</head>
+<body id="body">
+
+<input type="button" value="Create lists" onclick="config()" />
+
+</body>
+
+</html>
