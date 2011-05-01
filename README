@@ -1,0 +1,26 @@
+What's innoWiki?
+-----------
+
+This is a bunch of JavaScript that renders a wiki+googledocs style editor interface. This is what you've always needed to quickly edit shared documents at the corporate.
+
+In the current version the pages are saved into a SharePoint list, but there will be other back-ends implemented.
+
+Author
+--------
+szabomarcell gmail
+Any comments, help appreciated.
+
+License
+--------
+innoWiki incorporates jQuery and TinyMCE, so choose any license you'd like and can. 
+http://en.wikipedia.org/wiki/Beerware suggested.
+
+Setup
+--------
+1. Get a SharePoint site where you are admin. (this was the thoughest part)
+2. Install SharePoint Designer (it's free)
+3. Open your site in SP Designer
+4. Copy the innoWiki folder in the root folder of the site
+5. Open innoWiki/admin.htm in the browser, click on Create Lists
+6. Open innoWiki/editor.htm and start editing!
+
